@@ -16,7 +16,7 @@ ActiveRecord::Base.transaction do
   aaron = User.create!(username: 'ayron')
   mike = User.create!(username: 'coolboi420')
 
-  art1 = Artwork.create!(title: 'Mona Lisa', image_url: 'www.fue_mona_lisa.com', artist_id: fue.id )
+  art1 = Artwork.create!(title: 'Mona Lisa', image_url: 'www.fue_mona_lisa.com', artist_id: "#{fue.id}" )
   art2 = Artwork.create!(title: 'Mona Lisa', image_url: 'www.aaron_mona_lisa.com', artist_id: aaron.id )
   art3 = Artwork.create!(title: 'Superman', image_url: 'www.Superman.com', artist_id: fue.id )
   art4 = Artwork.create!(title: 'Dr. Manhatten', image_url: 'www.BlueMan.com', artist_id: aaron.id )

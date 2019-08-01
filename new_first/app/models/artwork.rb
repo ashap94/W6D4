@@ -1,6 +1,6 @@
 class Artwork < ApplicationRecord
 
-  validates :title, presence: true, uniqueness: { scope: :user, message: "Artwork title has to be unique to the artist" }
+  validates :title, presence: true, uniqueness: { scope: :artist_id, message: "Artwork title has to be unique to the artist" }
   validates :image_url, presence: true
 
 
