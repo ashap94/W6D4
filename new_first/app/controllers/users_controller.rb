@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    users = Users.all
+    users = User.all
 
     render json: users
   end
@@ -35,8 +35,8 @@ class UsersController < ApplicationController
   def destroy
 
     if User.find(params[:id])
-      User.destroy(params[:id])
-      render json: "destroyed"
+      destroyed = User.destroy(params[:id])
+      render json: destroyed
     else
       render json: "cannot destroy"
     end

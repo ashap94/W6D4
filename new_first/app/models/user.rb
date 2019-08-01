@@ -2,11 +2,13 @@ class User < ApplicationRecord
   
   validates :username, presence: true, uniqueness: true
 
-  has_many :artworks,
+  has_many :artworks, 
+    dependent: :destroy,
     foreign_key: :artist_id,
     class_name: :Artwork
 
-  has_many :artwork_shares,  #returns list of artwork that this use shared
+  has_many :artwork_shares, #returns list of artwork that this use shared
+    dependent: :destroy,  
     foreign_key: :viewer_id,
     class_name: :ArtworkShare
 
