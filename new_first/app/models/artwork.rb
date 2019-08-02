@@ -13,8 +13,13 @@ class Artwork < ApplicationRecord
     foreign_key: :artwork_id,
     class_name: :ArtworkShare
 
+  has_many :comments,
+    foreign_key: :artwork_id,
+    class_name: :Comment,
+    dependent: :destroy
+
+  #has many throughs
   has_many :shared_viewers,
     through: :artwork_shares,
     source: :viewer
-
 end

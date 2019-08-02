@@ -11,8 +11,15 @@ class User < ApplicationRecord
     dependent: :destroy,  
     foreign_key: :viewer_id,
     class_name: :ArtworkShare
+    
+  has_many :comments,
+    foreign_key: :author_id,
+    class_name: :Comment,
+    dependent: :destroy
 
+  #has many throughs
   has_many :shared_artworks, #returns list of artwork shared with this user
     through: :artwork_shares,
     source: :artwork
+
 end
